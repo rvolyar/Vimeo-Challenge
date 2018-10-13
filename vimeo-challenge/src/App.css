@@ -1,24 +1,85 @@
-.container{
-   
+
+p, h2{
+    color:#ffffff;
+    margin:0;
 }
+
 .container:first-child{
     background-color: #ffffff;
 }
+.container:first-child p, .container:first-child h2{
+    color:#000000;
+}
 .container:nth-child(2){
-    background-color: #3d3d3d;
+    background-color: #1c1c1c;
+}
+.container:nth-child(2) .section{
+    padding: 120px 0 20px 0;
 }
 .container:last-child{
-    background: linear-gradient(#3d3d3d,#ffffff);
+    background: linear-gradient(#1c1c1c,#f2f2f2);
+    padding: 20px;
+}
+.container:last-child .section{
+    padding: 20px 0 20px 0;
 }
 .section {
-    width:80%;
+    max-width:960px;
     margin: auto;
-    padding: 50px;
     overflow: auto;
+    padding:120px 0 120px 0;
+    display:flex;
 }
-.container:nth-child(odd) img {
-    float: left;
+.image{
+    max-width:440px;
+    margin:10px;
+    float:left;
+        padding: 0 10px 0 10px;
 }
-.container:nth-child(even) img {
-    float: right;
+.content{
+    max-width:fit-content;
+    margin:10px;
+    float:left;
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+img{
+    width:440px;
+}
+
+@media only screen and (max-width: 980px) {
+    
+}
+@media only screen and (max-width: 1024px) {
+    .content{
+        float: none;
+        margin:auto;
+        width:800px;
+        padding:20px 150px 20px 150px;
+    }
+    .image{
+        float:none;
+        margin:auto;
+        order:1;
+    }
+    .section{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .content{
+        padding:20px 20px 20px 20px;
+
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    img{
+        width:100%;
+    }
+    
 }

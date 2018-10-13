@@ -2,18 +2,29 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 let loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates tenetur ex in magnam quisquam maiores recusandae debitis cum doloremque consectetur adipisci eos, explicabo facere assumenda corrupti porro quia corporis maxime.";
-
+let sectionNumber=1;
 class Section extends Component{
 
   renderSection(image, text,title){
     return(
       <div className="container">
         <div className = "section">
-          <img src={ image } alt=""/>
-          <div className="text">
-            <h2>{title}</h2>
-            <p>{ text }</p>
+          { sectionNumber % 2 &&
+          <div className="content image">
+            <img src={ image } alt=""/>
           </div>
+          }
+          <div className="content">
+            <div className="text">
+                <h2>{title}</h2>
+                <p>{ text }</p>
+            </div>
+          </div>
+          { !(sectionNumber++ % 2) &&
+          <div className="content image">
+            <img src={ image } alt=""/>
+          </div>
+          }
         </div>
       </div>
     );
@@ -27,6 +38,7 @@ class Section extends Component{
       </div>
       );
   }
+  
 }
 class App extends Component {
   render() {
